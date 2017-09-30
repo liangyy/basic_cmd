@@ -22,7 +22,7 @@ def gen_one_submit(from_idx, to_idx, prefix, suffix, submit_idx, header_name, ou
     node_name = '{name}.{idx}'.format(name = header_name, idx = submit_idx)
     script_idx = re.sub('NAME', node_name, script)
     ntasks = to_idx - from_idx + 1
-    script_idx = re.sub('NTASKS', str(ntasks), script)
+    script_idx = re.sub('NTASKS', str(ntasks), script_idx)
     submit = open(submit_name, 'w')
     submit.write(script_idx)
     _write_bash(submit, from_idx, to_idx, prefix, suffix)
