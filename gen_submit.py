@@ -37,7 +37,7 @@ def _write_bash(submit, f, t, p, s):
 f = open(args.template, 'r')
 script = f.read()
 f.close()
-nsubmit = (args.to - args.fromm + 1) / args.ntasks
+nsubmit = int((args.to - args.fromm + 1) / args.ntasks)
 
 for i in range(nsubmit - 1):
     from_idx = args.fromm + i * args.ntasks
