@@ -1,0 +1,6 @@
+library(SRAdb)
+library(RSQLite)
+srafile = getSRAdbFile()
+con = dbConnect(SQLite(),srafile)
+listSRAfile('SRX062364',con)
+getSRAfile('SRX062364', con, destDir='SRX062364', makeDirectory=T, fileType='sra')
